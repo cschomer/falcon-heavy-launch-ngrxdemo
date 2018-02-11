@@ -1,5 +1,5 @@
 import { ActionReducerMap, ActionReducer, MetaReducer } from '@ngrx/store';
-import { environment } from '@env/environment';
+import { environment } from '../../environments/environment';
 
 import * as fromStage from './stage';
 
