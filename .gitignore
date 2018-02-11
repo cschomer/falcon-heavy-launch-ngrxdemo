@@ -3,6 +3,9 @@
 # config files
 /src/firebase.config.*
 
+#large asset files
+/src/assets/*.mp4
+
 # compiled output
 /dist
 /tmp

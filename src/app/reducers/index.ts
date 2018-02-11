@@ -3,9 +3,7 @@ import { environment } from '@env/environment';
 
 import * as fromStage from './stage';
 
-export interface State {
-  stage: fromStage.State;
-}
+export interface State {}
 
 export const reducers: ActionReducerMap<State> = {
   stage: fromStage.reducer

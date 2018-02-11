@@ -1,22 +1,69 @@
 import { StageActionTypes, StageActions } from '../actions/stage';
-
-export interface State {
-  error: string | null;
-  pending: boolean;
-}
-
-export const initialState: State = {
-  error: null,
-  pending: false
-};
+import { initialState } from './state';
+export interface State {}
 
 export function reducer(state = initialState, action: StageActions): State {
   switch (action.type) {
     case StageActionTypes.Startup: {
       return {
         ...state,
-        error: null,
-        pending: true
+        stage: 'Startup'
+      };
+    }
+
+    case StageActionTypes.Liftoff: {
+      return {
+        ...state,
+        stage: 'Liftoff'
+      };
+    }
+
+    case StageActionTypes.MaxQ: {
+      return {
+        ...state,
+        stage: 'MaxQ'
+      };
+    }
+
+    case StageActionTypes.BoostersEngineCutOff: {
+      return {
+        ...state,
+        stage: 'BoostersEngineCutOff'
+      };
+    }
+
+    case StageActionTypes.MainEngineCutOff: {
+      return {
+        ...state,
+        stage: 'MainEngineCutOff'
+      };
+    }
+
+    case StageActionTypes.FairingDeploy: {
+      return {
+        ...state,
+        stage: 'FairingDeploy'
+      };
+    }
+
+    case StageActionTypes.BoostersLand: {
+      return {
+        ...state,
+        stage: 'BoostersLand'
+      };
+    }
+
+    case StageActionTypes.Stage2ShutDown: {
+      return {
+        ...state,
+        stage: 'Stage2ShutDown'
+      };
+    }
+
+    case StageActionTypes.CoreLands: {
+      return {
+        ...state,
+        stage: 'CoreLands'
       };
     }
 
@@ -25,6 +72,3 @@ export function reducer(state = initialState, action: StageActions): State {
     }
   }
 }
-
-export const getError = (state: State) => state.error;
-export const getPending = (state: State) => state.pending;
